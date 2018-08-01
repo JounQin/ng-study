@@ -4,12 +4,24 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build": "ng build --prod",
+    "test": "ng test --watch=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "sync": "bash sync.sh",
+    "precommit": "lint-staged"
   },
   "private": true,
+  "lint-staged": {
+    "*.{css,json,md,scss}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.ts": [
+      "tslint -p . -t stylish --fix",
+      "git add"
+    ]
+  },
   "prettier": {
     "semi": false,
     "singleQuote": true,
@@ -43,6 +55,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "husky": "^0.14.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
@@ -50,6 +63,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "lint-staged": "^7.2.0",
     "prettier": "^1.14.0",
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",

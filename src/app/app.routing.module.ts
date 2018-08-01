@@ -9,13 +9,14 @@ import {
 } from '@angular/router'
 
 @Injectable()
-class HybridUrlHandlingStrategy implements UrlHandlingStrategy {
+export class HybridUrlHandlingStrategy implements UrlHandlingStrategy {
   constructor(
     private location: Location,
     private urlSerializer: UrlSerializer,
   ) {}
 
   shouldProcessUrl(url: UrlTree): boolean {
+    // tslint:disable-next-line no-use-before-declare
     return !AppRoutingModule.isUrlLegacy(this.extract(url).toString())
   }
 
@@ -48,7 +49,6 @@ class HybridUrlHandlingStrategy implements UrlHandlingStrategy {
       useClass: HybridUrlHandlingStrategy,
     },
   ],
-  exports: [RouterModule],
 })
 export class AppRoutingModule {
   private static routes: string[] = []
