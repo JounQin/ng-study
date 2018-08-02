@@ -9,7 +9,7 @@ angular.module('app').config([
     $locationProvider: angular.ILocationProvider,
     $routeProvider: angular.route.IRouteProvider,
   ) => {
-    $routeProvider.when('/phones', {
+    $routeProvider.when('/console/phones', {
       template: '<phone-list></phone-list>',
     })
 
