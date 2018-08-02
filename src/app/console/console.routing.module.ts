@@ -1,12 +1,7 @@
-import { Component, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 
 import { ConsoleComponent } from './console.component'
-
-@Component({
-  template: '',
-})
-export class EmptyComponent {}
 
 @NgModule({
   imports: [
@@ -22,12 +17,11 @@ export class EmptyComponent {}
           },
           {
             path: '**',
-            component: EmptyComponent,
+            loadChildren: './downgrade/downgrade.module#DowngradeModule',
           },
         ],
       },
     ]),
   ],
-  declarations: [EmptyComponent],
 })
 export class ConsoleRoutingModule {}
