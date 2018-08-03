@@ -32,7 +32,7 @@ export const setUpLocationSync = (ngUpgrade: UpgradeModule) => {
 let synced: boolean
 
 @Component({
-  template: '<ui-view></ui-view>',
+  template: '<div ui-view></div>',
 })
 export class DowngradeComponent implements OnInit {
   constructor(private upgrade: UpgradeModule, private elRef: ElementRef) {}

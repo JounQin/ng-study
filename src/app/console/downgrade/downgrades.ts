@@ -34,17 +34,21 @@ downgrade.directive<
     scope: {
       routerLink: '@',
     },
-    link: ({ routerLink, queryParams, replaceUrl }, element) => {
-      const isLink = element.prop('tagName') === 'A'
+    link: ({ routerLink, queryParams, replaceUrl }, $el) => {
+      const isLink = $el.prop('tagName') === 'A'
       if (isLink) {
-        element.attr(
+        $el.attr(
           'href',
           ngLocationStrategy.prepareExternalUrl(
-            ngRouter.serializeUrl(ngRouter.createUrlTree([routerLink])),
+            ngRouter.serializeUrl(
+              ngRouter.createUrlTree([routerLink], {
+                queryParams,
+              }),
+            ),
           ),
         )
       }
-      element.one('click', e => {
+      $el.one('click', e => {
         if (isLink) {
           e.preventDefault()
         }

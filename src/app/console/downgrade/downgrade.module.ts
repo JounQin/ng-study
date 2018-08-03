@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { UpgradeModule, setAngularJSGlobal } from '@angular/upgrade/static'
 
@@ -24,6 +24,5 @@ setAngularJSGlobal(angular)
     ]),
   ],
   declarations: [DowngradeComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DowngradeModule {}
