@@ -5,7 +5,7 @@ import { UpgradeModule } from '@angular/upgrade/static'
 let synced: boolean
 
 @Component({
-  template: '<div ng-view></div>',
+  template: '<ui-view></ui-view>',
 })
 export class DowngradeComponent implements OnInit {
   constructor(private upgrade: UpgradeModule, private elRef: ElementRef) {}

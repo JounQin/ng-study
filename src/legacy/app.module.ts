@@ -1,4 +1,4 @@
-import * as angular from 'angular'
-import * as route from 'angular-route'
+import uiRouter from '@uirouter/angularjs'
+import angular from 'angular'
 
-angular.module('app', [route])
+angular.module('app', [uiRouter])

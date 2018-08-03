@@ -1,6 +1,4 @@
-import * as angular from 'angular'
-
-import * as template from './phone-list.component.html'
+import template from './phone-list.component.html'
 
 angular.module('app').component('phoneList', {
   template,

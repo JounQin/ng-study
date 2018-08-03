@@ -1,15 +1,17 @@
-import * as angular from 'angular'
+import { StateProvider } from '@uirouter/angularjs'
 
 import './phone/phone-list.component'
 
 angular.module('app').config([
   '$locationProvider',
-  '$routeProvider',
+  '$stateProvider',
   (
     $locationProvider: angular.ILocationProvider,
-    $routeProvider: angular.route.IRouteProvider,
+    $stateProvider: StateProvider,
   ) => {
-    $routeProvider.when('/console/phones', {
+    $stateProvider.state({
+      name: 'phones',
+      url: '/console/phones',
       template: '<phone-list></phone-list>',
     })
 
