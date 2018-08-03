@@ -33,6 +33,8 @@ downgrade.directive<
     restrict: 'A',
     scope: {
       routerLink: '@',
+      queryParams: '@',
+      replaceUrl: '@',
     },
     link: ({ routerLink, queryParams, replaceUrl }, $el) => {
       const isLink = $el.prop('tagName') === 'A'
