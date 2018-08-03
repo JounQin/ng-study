@@ -1,6 +1,16 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
+
+import { Phone, PhoneService } from '../../core/services/phone.service'
 
 @Component({
-  template: 'Login!<a routerLink="/console/phones">Go to Phones</a>',
+  templateUrl: 'login.component.html',
 })
-export class LoginComponent {}
+export class LoginComponent implements OnInit {
+  phones: Phone[]
+
+  constructor(private phone: PhoneService) {}
+
+  async ngOnInit() {
+    this.phones = await this.phone.getPhones()
+  }
+}

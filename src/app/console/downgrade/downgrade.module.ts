@@ -1,8 +1,10 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { UpgradeModule, setAngularJSGlobal } from '@angular/upgrade/static'
-import * as angular from 'angular'
 
+import './downgrades'
+
+// tslint:disable-next-line:ordered-imports
 import '../../../legacy/app.entry'
 import { SharedModule } from '../../shared/shared.module'
 

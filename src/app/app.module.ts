@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component'
 import { AppRoutingModule } from './app.routing.module'
+import { CoreModule } from './core/core.module'
 
 @NgModule({
-  imports: [BrowserModule, RouterModule, AppRoutingModule],
+  imports: [BrowserModule, RouterModule, CoreModule, AppRoutingModule],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
