@@ -1,9 +1,33 @@
-import { LocationStrategy } from '@angular/common'
+import { Location } from '@angular/common'
 import { Component, ElementRef, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { UpgradeModule } from '@angular/upgrade/static'
 
-export const setUpLocationSync = (ngUpgrade: UpgradeModule) => {
+let anchor: HTMLAnchorElement | undefined
+
+function resolveUrl(
+  url: string,
+): {
+  pathname: string
+  search: string
+  hash: string
+} {
+  if (!anchor) {
+    anchor = document.createElement('a')
+  }
+
+  anchor.setAttribute('href', url)
+  anchor.setAttribute('href', anchor.href)
+
+  return {
+    // IE does not start `pathname` with `/` like other browsers.
+    pathname: `/${anchor.pathname.replace(/^\//, '')}`,
+    search: anchor.search,
+    hash: anchor.hash,
+  }
+}
+
+export function setUpLocationSync(ngUpgrade: UpgradeModule) {
   if (!ngUpgrade.$injector) {
     throw new Error(`
         RouterUpgradeInitializer can be used only after UpgradeModule.bootstrap has been called.
@@ -11,21 +35,15 @@ export const setUpLocationSync = (ngUpgrade: UpgradeModule) => {
       `)
   }
 
-  const ngInjector = ngUpgrade.injector
-  const router = ngUpgrade.injector.get(Router)
-  const locationStrategy: LocationStrategy = ngInjector.get(LocationStrategy)
-  const baseHref = locationStrategy.getBaseHref().replace(/\/+$/, '') // remove last slash char to ensure navigated url bellow starting with slash
-  const url = document.createElement('a')
+  const router: Router = ngUpgrade.injector.get(Router)
+  const location: Location = ngUpgrade.injector.get(Location)
 
   ngUpgrade.$injector
     .get('$rootScope')
     .$on('$locationChangeStart', (_: any, next: string, __: string) => {
-      url.href = next
-      let { pathname } = url
-      if (baseHref && !pathname.indexOf(baseHref)) {
-        pathname = pathname.slice(baseHref.length)
-      }
-      router.navigateByUrl(pathname + url.search + url.hash)
+      const url = resolveUrl(next)
+      const path = location.normalize(url.pathname)
+      router.navigateByUrl(path + url.search + url.hash)
     })
 }
 
