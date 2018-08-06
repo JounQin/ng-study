@@ -109,5 +109,10 @@
       }
     }
   },
-  "defaultProject": "ng-study"
+  "defaultProject": "ng-study",
+  "cli": {
+    "warnings": {
+      "typescriptMismatch": false
+    }
+  }
 }
