@@ -17,6 +17,10 @@ import { RouterModule } from '@angular/router'
         path: 'landing',
         loadChildren: './landing/landing.module#LandingModule',
       },
+      {
+        path: '**',
+        redirectTo: 'console',
+      },
     ]),
   ],
 })
