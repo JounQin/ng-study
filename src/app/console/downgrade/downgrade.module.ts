@@ -2,13 +2,11 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { UpgradeModule, setAngularJSGlobal } from '@angular/upgrade/static'
 
-import './downgrades'
-
-// tslint:disable-next-line:ordered-imports
-import '../../../legacy/app.entry'
-import { SharedModule } from '../../shared/shared.module'
+import { SharedModule } from 'app/shared/shared.module'
+import 'legacy/app.entry'
 
 import { DowngradeComponent } from './downgrade.component'
+import './downgrades'
 
 setAngularJSGlobal(angular)
 

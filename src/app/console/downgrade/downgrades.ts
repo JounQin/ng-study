@@ -3,8 +3,8 @@ import { Router } from '@angular/router'
 import { downgradeInjectable } from '@angular/upgrade/static'
 import angular, { IScope } from 'angular'
 
-import { Directory } from '../../../types'
-import { PhoneService } from '../../core/services/phone.service'
+import { PhoneService } from 'app/core/services/phone.service'
+import { Directory } from 'types'
 
 export const DOWNGRADE_MODULE = '__DOWNGRADE_MODULE__'
 

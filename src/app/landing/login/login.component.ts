@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import { Phone, PhoneService } from '../../core/services/phone.service'
+import { Phone, PhoneService } from 'app/core/services/phone.service'
 
 @Component({
   templateUrl: 'login.component.html',

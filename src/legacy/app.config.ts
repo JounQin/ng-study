@@ -1,7 +1,6 @@
 import { Router } from '@angular/router'
 import { StateProvider, UrlRouterProvider } from '@uirouter/angularjs'
 
-import './foo/foo.component'
 import './phone/phone-list.component'
 
 angular.module('app').config([
@@ -21,11 +20,6 @@ angular.module('app').config([
       name: 'phones',
       url: '/console/phones',
       template: '<phone-list></phone-list>',
-    })
-    $stateProvider.state({
-      name: 'foo',
-      url: '/console/foo',
-      template: '<foo></foo>',
     })
 
     $urlRouterProvider.otherwise(() => {

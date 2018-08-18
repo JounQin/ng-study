@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-import { delay } from '../../utils'
+import { delay } from 'app/utils'
 
 export interface Phone {
   name: string
