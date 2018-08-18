@@ -1,6 +1,7 @@
 import { Router } from '@angular/router'
 import { StateProvider, UrlRouterProvider } from '@uirouter/angularjs'
 
+import './foo/foo.component'
 import './phone/phone-list.component'
 
 angular.module('app').config([
