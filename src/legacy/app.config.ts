@@ -21,6 +21,11 @@ angular.module('app').config([
       url: '/console/phones',
       template: '<phone-list></phone-list>',
     })
+    $stateProvider.state({
+      name: 'foo',
+      url: '/console/foo',
+      template: '<foo></foo>',
+    })
 
     $urlRouterProvider.otherwise(() => {
       ngRouterProvider.$get().navigateByUrl(null, {
