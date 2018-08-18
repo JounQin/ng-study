@@ -274,19 +274,19 @@ Apache License
  See the License for the specific language governing permissions and
  limitations under the License.
 
-@angular/core@6.1.2
+@angular/core@6.1.3
 MIT
 MIT
 
-@angular/common@6.1.2
+@angular/common@6.1.3
 MIT
 MIT
 
-@angular/router@6.1.2
+@angular/router@6.1.3
 MIT
 MIT
 
-@angular/platform-browser@6.1.2
+@angular/platform-browser@6.1.3
 MIT
 MIT
 
