@@ -7,14 +7,10 @@ angular.module('app').config([
   '$locationProvider',
   '$stateProvider',
   '$urlRouterProvider',
-  'ngRouterProvider',
   (
     $locationProvider: angular.ILocationProvider,
     $stateProvider: StateProvider,
     $urlRouterProvider: UrlRouterProvider,
-    ngRouterProvider: {
-      $get: () => Router
-    },
   ) => {
     $stateProvider.state({
       name: 'phones',
@@ -22,9 +18,16 @@ angular.module('app').config([
       template: '<phone-list></phone-list>',
     })
 
-    $urlRouterProvider.otherwise(() => {
-      ngRouterProvider.$get().navigateByUrl(null, {
-        replaceUrl: true,
+    let ngRoutes: string[]
+
+    $urlRouterProvider.otherwise(($injector, $location) => {
+      const ngRouter = $injector.get<Router>('ngRouter')
+      if (!ngRoutes) {
+        ngRoutes = ngRouter.config.map(({ path }) => path)
+      }
+      const canBeHandled = ngRoutes.includes($location.path().split('/')[1])
+      ngRouter.navigateByUrl(canBeHandled && $location.url(), {
+        replaceUrl: !canBeHandled,
       })
     })
 

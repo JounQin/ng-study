@@ -12,7 +12,6 @@ export class DowngradeComponent implements OnInit, OnDestroy {
     if (!this.upgrade.$injector) {
       return
     }
-
     this.upgrade.$injector.get('$rootScope').$destroy()
   }
 
