@@ -39,7 +39,7 @@
     "@angular/http": "^7.0.1",
     "@angular/platform-browser": "^7.0.1",
     "@angular/platform-browser-dynamic": "^7.0.1",
-    "@angular/router": "^7.0.1",
+    "@angular/router": "^6.1.10",
     "@angular/upgrade": "^7.0.1",
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.5",

@@ -29,11 +29,9 @@ angular.module('app').config([
       const canBeHandled = ngRoutes.includes(
         $urlServiceProvider.path().split('/')[1],
       )
-      setTimeout(() => {
-        ngRouter.navigateByUrl(canBeHandled && $urlServiceProvider.url(), {
-          replaceUrl: !canBeHandled,
-        })
-      }, 100)
+      ngRouter.navigateByUrl(canBeHandled && $urlServiceProvider.url(), {
+        replaceUrl: true,
+      })
     })
 
     $locationProvider.html5Mode(true)
