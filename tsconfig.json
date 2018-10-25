@@ -14,8 +14,6 @@
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "target": "es5",
-    "typeRoots": ["node_modules/@types"],
     "lib": ["esnext", "dom"],
     "paths": {
       "*": ["src/*", "node_modules/*"]
