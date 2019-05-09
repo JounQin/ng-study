@@ -6,6 +6,7 @@
     "tslint-plugin-prettier"
   ],
   "rules": {
+    "angular-whitespace": false,
     "no-floating-promises": false,
     "prettier": true,
     "strict-type-predicates": false
