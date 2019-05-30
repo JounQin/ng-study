@@ -17,7 +17,8 @@ import { LandingComponent } from './landing.component'
           },
           {
             path: 'login',
-            loadChildren: './login/login.module#LoginModule',
+            loadChildren: () =>
+              import('./login/login.module').then(m => m.LoginModule),
           },
         ],
       },

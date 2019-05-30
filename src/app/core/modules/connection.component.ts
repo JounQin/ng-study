@@ -25,11 +25,14 @@ import { ConnectionSlowDirective } from './connection-slow.directive'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConnectionComponent {
-  @ContentChild(TemplateRef)
+  @ContentChild(TemplateRef, { static: false })
   templateRef: TemplateRef<any>
 
-  @ContentChild(ConnectionFastDirective) connectionFast: ConnectionFastDirective
-  @ContentChild(ConnectionSlowDirective) connectionSlow: ConnectionSlowDirective
+  @ContentChild(ConnectionFastDirective, { static: false })
+  connectionFast: ConnectionFastDirective
+
+  @ContentChild(ConnectionSlowDirective, { static: false })
+  connectionSlow: ConnectionSlowDirective
 
   isFast$ = this.connection.isFast$
 

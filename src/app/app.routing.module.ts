@@ -11,19 +11,25 @@ import { RouterModule } from '@angular/router'
       },
       {
         path: 'console',
-        loadChildren: './console/console.module#ConsoleModule',
+        loadChildren: () =>
+          import('./console/console.module').then(m => m.ConsoleModule),
       },
       {
         path: 'landing',
-        loadChildren: './landing/landing.module#LandingModule',
+        loadChildren: () =>
+          import('./landing/landing.module').then(m => m.LandingModule),
       },
       {
         path: 'connection',
-        loadChildren: './connection/connection.module#ConnectionModule',
+        loadChildren: () =>
+          import('./connection/connection.module').then(
+            m => m.ConnectionModule,
+          ),
       },
       {
         path: 'zone',
-        loadChildren: './zone/zone.module#ZoneModule',
+        loadChildren: () =>
+          import('./zone/zone.module').then(m => m.ZoneModule),
       },
       {
         path: '**',
