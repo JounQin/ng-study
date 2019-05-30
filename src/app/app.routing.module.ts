@@ -18,6 +18,14 @@ import { RouterModule } from '@angular/router'
         loadChildren: './landing/landing.module#LandingModule',
       },
       {
+        path: 'connection',
+        loadChildren: './connection/connection.module#ConnectionModule',
+      },
+      {
+        path: 'zone',
+        loadChildren: './zone/zone.module#ZoneModule',
+      },
+      {
         path: '**',
         redirectTo: 'console',
       },
