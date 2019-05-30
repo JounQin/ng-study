@@ -18,6 +18,7 @@
     "lib": ["esnext", "dom"],
     "paths": {
       "*": ["src/*", "node_modules/*"]
-    }
+    },
+    "target": "es2015"
   }
 }

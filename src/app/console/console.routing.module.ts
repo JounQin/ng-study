@@ -13,11 +13,15 @@ import { ConsoleComponent } from './console.component'
           {
             path: '',
             pathMatch: 'full',
-            loadChildren: './home/home.module#HomeModule',
+            loadChildren: () =>
+              import('./home/home.module').then(m => m.HomeModule),
           },
           {
             path: '**',
-            loadChildren: './downgrade/downgrade.module#DowngradeModule',
+            loadChildren: () =>
+              import('./downgrade/downgrade.module').then(
+                m => m.DowngradeModule,
+              ),
           },
         ],
       },
