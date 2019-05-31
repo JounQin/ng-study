@@ -32,6 +32,20 @@ import { RouterModule } from '@angular/router'
           import('./zone/zone.module').then(m => m.ZoneModule),
       },
       {
+        path: 'if',
+        loadChildren: () => import('./if/if.module').then(m => m.IfModule),
+      },
+      {
+        path: 'outlet',
+        loadChildren: () =>
+          import('./outlet/outlet.module').then(m => m.OutletModule),
+      },
+      {
+        path: 'user',
+        loadChildren: () =>
+          import('./user/user.module').then(m => m.UserModule),
+      },
+      {
         path: '**',
         redirectTo: 'console',
       },
