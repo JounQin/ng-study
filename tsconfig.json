@@ -17,7 +17,8 @@
     "noUnusedParameters": true,
     "lib": ["esnext", "dom"],
     "paths": {
-      "*": ["src/*", "node_modules/*"]
+      "*": ["src/*", "node_modules/*"],
+      "lodash": ["lodash-es"]
     },
     "target": "es2015"
   }
