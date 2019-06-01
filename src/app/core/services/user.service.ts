@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { refCount, publishLast } from 'rxjs/operators'
+import { Observable } from 'rxjs'
 
 export interface IUser {
   id: number
@@ -15,8 +16,8 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getUsers() {
-    return this.httpClient.get<IUser[]>(this.ROOT_URL).pipe(
+  getUsers(): Observable<IUser[]> {
+    return this.httpClient.get(this.ROOT_URL).pipe(
       publishLast(),
       refCount(),
     )

@@ -46,6 +46,10 @@ import { RouterModule } from '@angular/router'
           import('./user/user.module').then(m => m.UserModule),
       },
       {
+        path: 'for',
+        loadChildren: () => import('./for/for.module').then(m => m.ForModule),
+      },
+      {
         path: '**',
         redirectTo: 'console',
       },
