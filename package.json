@@ -44,7 +44,7 @@
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.7.5",
     "core-js": "^2.5.4",
-    "rxjs": "^6.3.3",
+    "rxjs": "^6.5.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
