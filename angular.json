@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/@alauda/ui/theme/style.css",
               "src/styles.scss"
             ],
             "scripts": []

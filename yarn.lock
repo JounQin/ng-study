@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@alauda/ui@^6.5.6":
+  version "6.5.6"
+  resolved "https://registry.yarnpkg.com/@alauda/ui/-/ui-6.5.6.tgz#c5b591fe7ced9ec84e14bce8f2b05a79b9dfbe3a"
+  integrity sha512-KRsmHkubbWbZx7KU6WOBdvNlb4VAN5JZoPumcOjR+t5KpcHmOYXBUKxer69dj43Y64PMWtTX4tPAABw9A3P+XA==
+  dependencies:
+    tslib "^2.3.0"
+
 "@ampproject/remapping@2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@ampproject/remapping/-/remapping-2.2.0.tgz#56c133824780de3174aed5ab6834f3026790154d"
@@ -130,6 +137,15 @@
   integrity sha512-Vmy0AljHc/GOp87O2x0mxUDiyfJFW8ndDE9Xrm/g0rnLnNWsaLtLXr1TWbwF7eTqKA3k/QcUvYAjLMWKvjyKgQ==
   dependencies:
     tslib "^2.3.0"
+
+"@angular/cdk@^15.2.7":
+  version "15.2.7"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-15.2.7.tgz#c6024076b792cb3e564411b9d01e0e820a90dbfb"
+  integrity sha512-IQg/EuZ3LC/vOHZtcLvkM+FSACXW5PVv2NddJgsBOtfcf1HcTk97VhegtB4WGQTUe1pcxiLGz/aWYuIRknjitw==
+  dependencies:
+    tslib "^2.3.0"
+  optionalDependencies:
+    parse5 "^7.1.2"
 
 "@angular/cli@~15.2.6":
   version "15.2.6"
@@ -2627,6 +2643,11 @@ date-format@^4.0.14:
   resolved "https://registry.yarnpkg.com/date-format/-/date-format-4.0.14.tgz#7a8e584434fb169a521c8b7aa481f355810d9400"
   integrity sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==
 
+dayjs@^1.11.7:
+  version "1.11.7"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
+  integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
+
 debug@2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -4710,7 +4731,7 @@ parse5@^6.0.1:
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
   integrity sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==
 
-parse5@^7.0.0:
+parse5@^7.0.0, parse5@^7.1.2:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-7.1.2.tgz#0736bebbfd77793823240a23b7fc5e010b7f8e32"
   integrity sha512-Czj1WaSVpaoj0wbhMzLmWD69anp2WH7FXMB9n1Sy8/ZFF9jolSQVMu1Ij5WIyGmcBmhk7EOndpO4mIpihVqAXw==

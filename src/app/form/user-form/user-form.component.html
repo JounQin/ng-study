@@ -1,0 +1,36 @@
+<ng-container [formGroup]="form">
+  <aui-form-item>
+    <label auiFormItemLabel>Name</label>
+    <input
+      auiFormItemControl
+      formControlName="name"
+      aui-input
+      placeholder="Name"
+    />
+  </aui-form-item>
+  <aui-form-item>
+    <label auiFormItemLabel>Email</label>
+    <input
+      auiFormItemControl
+      formControlName="email"
+      aui-input
+      placeholder="Email"
+      type="email"
+    />
+  </aui-form-item>
+  <aui-form-item>
+    <label auiFormItemLabel>Age</label>
+    <aui-number-input
+      auiFormItemControl
+      formControlName="age"
+    ></aui-number-input>
+    <div auiFormItemError>Invalid age</div>
+  </aui-form-item>
+  <aui-form-item>
+    <label auiFormItemLabel>Gender</label>
+    <aui-radio-group auiFormItemControl formControlName="gender">
+      <aui-radio-button [value]="false">Female</aui-radio-button>
+      <aui-radio-button [value]="true">Male</aui-radio-button>
+    </aui-radio-group>
+  </aui-form-item>
+</ng-container>

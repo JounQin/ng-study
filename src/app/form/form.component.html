@@ -1,0 +1,9 @@
+<form [formGroup]="form" auiForm (ngSubmit)="onSubmit()">
+  <app-user-form formControlName="user"></app-user-form>
+
+  <button aui-button="primary" type="submit">Submit</button>
+</form>
+
+<div>Form Errors: {{ form.get("user")!.errors | json }}</div>
+
+<button aui-button (click)="onCancel()">Cancel</button>
