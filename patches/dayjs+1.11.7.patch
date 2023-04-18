@@ -1,0 +1,25 @@
+diff --git a/node_modules/dayjs/package.json b/node_modules/dayjs/package.json
+index 7f053d5..9405471 100644
+--- a/node_modules/dayjs/package.json
++++ b/node_modules/dayjs/package.json
+@@ -15,6 +15,20 @@
+     "test:sauce": "npm run sauce -- 0 && npm run sauce -- 1 && npm run sauce -- 2  && npm run sauce -- 3",
+     "size": "size-limit && gzip-size dayjs.min.js"
+   },
++  "exports": {
++    ".": {
++      "require": "./dayjs.min.js",
++      "import": "./esm/index.js"
++    },
++    "./locale/*": {
++      "require": "./locale/*.js",
++      "import": "./esm/locale/*.js"
++    },
++    "./plugin/*": {
++      "require": "./plugin/*.js",
++      "import": "./esm/plugin/*/index.js"
++    }
++  },
+   "pre-commit": [
+     "lint"
+   ],

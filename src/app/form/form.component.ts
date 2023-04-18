@@ -1,15 +1,14 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
-import { Location } from '@angular/common';
+import { JsonPipe, Location } from '@angular/common';
 import { User, UserFormComponent } from './user-form/user-form.component';
-import { FormBuilder } from '@angular/forms';
-import { startWith } from 'rxjs';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ButtonModule } from '@alauda/ui';
 
 @Component({
   templateUrl: './form.component.html',
   standalone: true,
-  imports: [SharedModule, UserFormComponent],
+  imports: [ReactiveFormsModule, JsonPipe, ButtonModule, UserFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormComponent implements OnInit {

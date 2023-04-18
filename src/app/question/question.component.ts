@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DynamicFormComponent } from './dynamic-form.component';
 import { QuestionService } from './question.service';
-import { SharedModule } from '../shared/shared.module';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   templateUrl: './question.component.html',
   standalone: true,
-  imports: [SharedModule, DynamicFormComponent],
+  imports: [AsyncPipe, DynamicFormComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [QuestionService],
 })

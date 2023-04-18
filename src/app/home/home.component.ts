@@ -1,9 +1,10 @@
+import { ButtonModule } from '@alauda/ui';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
+import { RouterLink } from '@angular/router';
 
 @Component({
   templateUrl: './home.component.html',
-  imports: [SharedModule],
+  imports: [RouterLink, ButtonModule],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

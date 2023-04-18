@@ -5,17 +5,24 @@ import {
   OnInit,
   inject,
 } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
 import { QuestionControlService } from './question-control.service';
 import { QuestionBase } from './question-base';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
+import { NgFor, NgIf } from '@angular/common';
+import { ButtonModule } from '@alauda/ui';
 
 @Component({
   selector: 'app-dynamic-form',
   templateUrl: './dynamic-form.component.html',
   standalone: true,
-  imports: [SharedModule, DynamicFormQuestionComponent],
+  imports: [
+    ReactiveFormsModule,
+    NgFor,
+    NgIf,
+    ButtonModule,
+    DynamicFormQuestionComponent,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [QuestionControlService],
 })

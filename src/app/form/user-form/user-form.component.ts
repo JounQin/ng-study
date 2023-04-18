@@ -1,3 +1,4 @@
+import { FormModule, RadioModule } from '@alauda/ui';
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -9,7 +10,6 @@ import {
   forwardRef,
 } from '@angular/core';
 
-import { SharedModule } from '../../shared/shared.module';
 import {
   AbstractControl,
   ControlValueAccessor,
@@ -18,9 +18,10 @@ import {
   NG_VALUE_ACCESSOR,
   NgControl,
   NgForm,
+  ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Subject, combineLatest, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 
 export interface User {
   name: string;
@@ -33,7 +34,7 @@ export interface User {
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   standalone: true,
-  imports: [SharedModule],
+  imports: [ReactiveFormsModule, FormModule, RadioModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
