@@ -13,6 +13,11 @@ const routes: Routes = [
     loadComponent: () =>
       import('./form/form.component').then((m) => m.FormComponent),
   },
+  {
+    path: 'question',
+    loadComponent: () =>
+      import('./question/question.component').then((m) => m.QuestionComponent),
+  },
 ];
 
 @NgModule({

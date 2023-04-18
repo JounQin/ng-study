@@ -1,0 +1,27 @@
+<aui-form-item [formGroup]="form" labelWidth="114px" width="medium">
+  <label auiFormItemLabel [attr.for]="question.key">{{ question.label }}</label>
+  <ng-container [ngSwitch]="question.controlType">
+    <input
+      auiFormItemControl
+      aui-input
+      *ngSwitchCase="'textbox'"
+      [formControlName]="question.key"
+      [id]="question.key"
+      [type]="question.type"
+    />
+    <aui-select
+      auiFormItemControl
+      *ngSwitchCase="'dropdown'"
+      [formControlName]="question.key"
+      [id]="question.key"
+    >
+      <aui-option
+        *ngFor="let option of question.options"
+        [label]="option.value"
+        [value]="option.key"
+        >{{ option.value }}</aui-option
+      >
+    </aui-select>
+  </ng-container>
+  <div auiFormItemError>{{ question.label }} is required</div>
+</aui-form-item>
