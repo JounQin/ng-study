@@ -1,9 +1,13 @@
-<form [formGroup]="form" auiForm (ngSubmit)="onSubmit()">
-  <app-user-form formControlName="user"></app-user-form>
+<form [formGroup]="form">
+  <formly-form
+    [model]="model"
+    [fields]="fields"
+    [options]="options"
+    [form]="form"
+  ></formly-form>
+  <button aui-button="primary">Submit</button>
 
-  <button aui-button="primary" type="submit">Submit</button>
+  <br />
+
+  {{ model | json }}
 </form>
-
-<div>Form Errors: {{ form.get("user")!.errors | json }}</div>
-
-<button aui-button (click)="onCancel()">Cancel</button>

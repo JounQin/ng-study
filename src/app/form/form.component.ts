@@ -1,46 +1,71 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { JsonPipe, Location } from '@angular/common';
-import { User, UserFormComponent } from './user-form/user-form.component';
-import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { ButtonModule } from '@alauda/ui';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ButtonModule, FormModule } from '@alauda/ui';
+import {
+  FormlyFieldConfig,
+  FormlyFormOptions,
+  FormlyModule,
+} from '@ngx-formly/core';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
 
 @Component({
+  selector: 'app-form',
   templateUrl: './form.component.html',
   standalone: true,
-  imports: [ReactiveFormsModule, JsonPipe, ButtonModule, UserFormComponent],
+  imports: [
+    ReactiveFormsModule,
+    JsonPipe,
+    ButtonModule,
+    FormModule,
+    FormlyModule,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FormComponent implements OnInit {
-  form = this.fb.group({
-    user: {
-      age: 10,
-    } as User,
-  });
+export default class FormComponent {
+  form = new FormGroup({});
 
-  constructor(
-    private location: Location,
-    private router: Router,
-    private fb: FormBuilder
-  ) {}
+  model: any = {};
 
-  ngOnInit(): void {
-    this.form.valueChanges.subscribe((value) => {
-      console.log(value);
-    });
-  }
+  options: FormlyFormOptions = {};
 
-  onSubmit() {
-    if (this.form.valid) {
-      console.log(this.form.value);
-      this.router.navigateByUrl('/');
-      return;
-    }
-
-    console.log('invalid form');
-  }
-
-  onCancel() {
-    this.location.back();
-  }
+  fields: FormlyFieldConfig[] = [
+    {
+      key: 'Input',
+      type: 'input',
+      props: {
+        label: 'Input',
+        placeholder: 'Placeholder',
+        description: 'Description',
+        required: true,
+        width: 'medium',
+      },
+    },
+    {
+      key: 'Select',
+      type: 'select',
+      props: {
+        label: 'Select',
+        placeholder: 'Placeholder',
+        description: 'Description',
+        required: true,
+        width: 'medium',
+        clearable: true,
+        multiple: true,
+        options: [
+          {
+            label: 'A',
+            value: 'a',
+          },
+          {
+            label: 'B',
+            value: 'b',
+          },
+          {
+            label: 'C',
+            value: 'c',
+          },
+        ],
+      },
+    },
+  ];
 }

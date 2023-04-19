@@ -4,17 +4,14 @@ export const routes: Route[] = [
   {
     path: '',
     pathMatch: 'full',
-    loadComponent: () =>
-      import('./home/home.component').then((m) => m.HomeComponent),
+    loadComponent: () => import('./home/home.component'),
   },
   {
     path: 'form',
-    loadComponent: () =>
-      import('./form/form.component').then((m) => m.FormComponent),
+    loadChildren: () => import('./form/routes'),
   },
   {
     path: 'question',
-    loadComponent: () =>
-      import('./question/question.component').then((m) => m.QuestionComponent),
+    loadComponent: () => import('./question/question.component'),
   },
 ];

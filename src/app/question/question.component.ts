@@ -10,7 +10,7 @@ import { AsyncPipe } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [QuestionService],
 })
-export class QuestionComponent {
+export default class QuestionComponent {
   question = inject(QuestionService);
 
   questions$ = this.question.getQuestions();
