@@ -3,6 +3,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FieldType, FormlyModule } from '@ngx-formly/core';
+import { SafeAsyncPipe } from '../safe-async.pipe';
 
 @Component({
   template: `
@@ -16,7 +17,7 @@ import { FieldType, FormlyModule } from '@ngx-formly/core';
       [clearable]="props.clearable"
     >
       <aui-option
-        *ngFor="let option of $any(props.options)"
+        *ngFor="let option of $any(props.options) | safeAsync"
         [label]="option.label"
         [value]="option.value"
       >
@@ -33,7 +34,7 @@ import { FieldType, FormlyModule } from '@ngx-formly/core';
         [clearable]="props.clearable"
       >
         <aui-option
-          *ngFor="let option of $any(props.options)"
+          *ngFor="let option of $any(props.options) | safeAsync"
           [label]="option.label"
           [value]="option.value"
         >
@@ -46,6 +47,7 @@ import { FieldType, FormlyModule } from '@ngx-formly/core';
   imports: [
     NgIf,
     NgFor,
+    SafeAsyncPipe,
     ReactiveFormsModule,
     FormModule,
     SelectModule,

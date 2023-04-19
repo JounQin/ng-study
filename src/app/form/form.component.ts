@@ -7,6 +7,7 @@ import {
 } from '@ngx-formly/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-form',
@@ -41,10 +42,10 @@ export default class FormComponent {
       },
     },
     {
-      key: 'Select',
+      key: 'Select1',
       type: 'select',
       props: {
-        label: 'Select',
+        label: 'Select 1',
         placeholder: 'Placeholder',
         description: 'Description',
         required: true,
@@ -65,6 +66,31 @@ export default class FormComponent {
             value: 'c',
           },
         ],
+      },
+    },
+    {
+      key: 'Select2',
+      type: 'select',
+      props: {
+        label: 'Select 2',
+        placeholder: 'Placeholder',
+        description: 'Description',
+        required: true,
+        width: 'medium',
+        options: of([
+          {
+            label: 'A',
+            value: 'a',
+          },
+          {
+            label: 'B',
+            value: 'b',
+          },
+          {
+            label: 'C',
+            value: 'c',
+          },
+        ]),
       },
     },
   ];
