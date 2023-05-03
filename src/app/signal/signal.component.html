@@ -1,0 +1,38 @@
+current num: {{ num() }}
+
+<br />
+
+current double num: {{ double() }}
+
+<br />
+
+current counter: {{ counter() }}
+
+<br />
+
+current counterSv: {{ counterSv.value() }}
+
+<br />
+
+current counterSv2: {{ counterSv2.value$ | async }}
+
+<input
+  aui-input
+  type="range"
+  min="0"
+  max="2000"
+  [ngModel]="interval()"
+  (ngModelChange)="
+    interval.set($event);
+    counterSv.interval.set($event);
+    counterSv2.interval$$.next($event)
+  "
+/>
+
+interval: {{ interval() }}
+
+<br />
+
+<button aui-button (click)="num.set(num() + 1)">Add</button>
+
+<button aui-button (click)="location.back()">Back</button>

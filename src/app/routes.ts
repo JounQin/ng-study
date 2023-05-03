@@ -14,4 +14,8 @@ export const routes: Route[] = [
     path: 'question',
     loadComponent: () => import('./question/question.component'),
   },
+  {
+    path: 'signal',
+    loadComponent: () => import('./signal/signal.component'),
+  }
 ];
